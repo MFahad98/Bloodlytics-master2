@@ -19,7 +19,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 function Home() {
   
-//  const value="name"
+//  const value="name" jhadjd
 
   const _map=useRef(1);
   const [lating,setLating]=useState({})
