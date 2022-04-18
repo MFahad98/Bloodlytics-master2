@@ -1,0 +1,43 @@
+{
+    "expo": {
+        "name": "my-project",
+        "slug": "my-project",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "com.my-project",
+            "config": {
+                "googleMapsApiKey": "AIzaSyDV44LErXGdtjYjC1htFQXBGx5TUzYdMk8AIzaSyDV44LErXGdtjYjC1htFQXBGx5TUzYdMk8"
+            }
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/adaptive-icon.png",
+                "backgroundColor": "#FFFFFF"
+            },
+            "package": ".com.my-project",
+            "config": {
+                "googleMaps": {
+                    "apiKey": "AIzaSyDV44LErXGdtjYjC1htFQXBGx5TUzYdMk8"
+                },
+                "permission": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION", "FOREGROUND_SERVICE"]
+            }
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        }
+    }
+}
