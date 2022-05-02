@@ -10,6 +10,7 @@ import Signup from './Components/Signup.js';
 import Step1 from './Components/Step1.js';
 import Step2 from './Components/Step2.js';
 import Step3 from './Components/Step3.js';
+import DataVisualization from './Components/DataVisualization';
 
 import MyDrawer from './Components/Nexthome.js';
 
@@ -17,7 +18,47 @@ import MyDrawer from './Components/Nexthome.js';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import { 
+  Roboto_100Thin,
+  Roboto_100Thin_Italic,
+  Roboto_300Light,
+  Roboto_300Light_Italic,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_500Medium,
+  Roboto_500Medium_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+  Roboto_900Black,
+  Roboto_900Black_Italic 
+} from '@expo-google-fonts/roboto';
+
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
+
+
+
 function HomeScreen({ navigation }) {
+  let [fonts,error]=useFonts(
+   { Roboto_100Thin,
+  Roboto_100Thin_Italic,
+  Roboto_300Light,
+  Roboto_300Light_Italic,
+  Roboto_400Regular,
+  Roboto_400Regular_Italic,
+  Roboto_500Medium,
+  Roboto_500Medium_Italic,
+  Roboto_700Bold,
+  Roboto_700Bold_Italic,
+  Roboto_900Black,
+  Roboto_900Black_Italic }
+  );
+  if(!fonts){
+    return <AppLoading/>;
+  }
+
+
   return (
     <>
     <View style={styles.Hscreen}>
@@ -30,7 +71,7 @@ function HomeScreen({ navigation }) {
       <TouchableOpacity
         onPress={() => navigation.navigate('Login')}
         style={styles.button1}>
-       <View style={{marginTop:6}}> 
+       <View style={{marginTop:6,paddingRight:2}}> 
        <AntDesign name="login" size={17} color="white" />
        </View>
         <Text style={styles.text}>Log in</Text>
@@ -41,9 +82,9 @@ function HomeScreen({ navigation }) {
        <TouchableOpacity
         onPress={() => navigation.navigate('Step1')}
         style={styles.icon}>
-          <View style={{marginTop:4}}> 
-        <FontAwesome name="sign-in" size={21} color="white" />
-        </View>
+          <View style={{marginTop:6,marginLeft:4,paddingRight:2}}> 
+       <AntDesign name="login" size={17} color="white" />
+       </View>
         <Text style={styles.text2}>Sign up</Text>
       </TouchableOpacity>
 
@@ -71,6 +112,8 @@ function App() {
         <Stack.Screen name="Step1" component={Step1} />
         <Stack.Screen name="Step2" component={Step2} />
         <Stack.Screen name="Step3" component={Step3} />
+
+        <Stack.Screen name="DataVisualization" component={DataVisualization} />
         
         <Stack.Screen name="Welcome to Bloodlytics" component={MyDrawer} />
       </Stack.Navigator>
@@ -84,12 +127,14 @@ function App() {
 export default App;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    fontFamily:'Roboto_100Thin'
+    },
   header:{
     color: "#f24e1e",
     fontSize:29,

@@ -171,7 +171,7 @@ export class Signup extends Component {
         if (!passcheck.test(pass)) {
           alert('Enter Password requirements!');
         }
-        var apiURL = "http://192.168.2.45:80/api/insert.php";
+        var apiURL = "http://192.168.0.104:80/api/insert.php";
         // var headers = {
         //   'Accept' : 'application/json',
         //   'Content-Type' : 'application/json'

@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { StyleSheet,View, Text,TextInput,Button, Alert,TouchableOpacity,Image,ImageBackground} from 'react-native';
+import { StyleSheet,View, Text,TextInput,Button,Dimensions, Alert,TouchableOpacity,Image,ScrollView,ImageBackground} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './Login.js';
 import { useState,useRef,useEffect } from 'react';
-
+import DataVisualization from './DataVisualization.js';
 // import * as ImagePicker from 'expo-image-picker';
 import MapView,{PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import { createDrawerNavigator,DrawerContentScrollView,
@@ -15,9 +17,17 @@ import { createDrawerNavigator,DrawerContentScrollView,
 
 import { AntDesign } from '@expo/vector-icons'; 
 
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
 
 
-function Home() {
+function Home({navigation}) {
   
 //  const value="name" jhadjd
 
@@ -61,6 +71,8 @@ function Home() {
   })
   
   const [text, setText] = useState('');
+  global.text1=text;
+
 
   const Cat = () => {
     return (
@@ -151,7 +163,7 @@ function Home() {
             coordinate={{latitude:  31.430766,
             longitude: 73.1158531}}
             title={title1}
-            description={"description"}> 
+            description={"description contect no 1311354"}> 
             </MapView.Marker><MapView.Marker
             coordinate={{latitude:  31.430466,
             longitude: 73.1158531}}
@@ -164,34 +176,202 @@ function Home() {
             description={"description"}
          />:null }
       
-          {/* <MapView.Marker
-            coordinate={{latitude:  31.430966,
-            longitude: 73.1151131}}
+          <MapView.Marker
+            coordinate={{latitude:  31.430741,
+            longitude: 73.1179950}}
             title={"title"}
             description={"description"}
-         /> */}
+         />
       </MapView> 
+      
+      
+
       </View>
+      <View style={[{ width: "100%", margintop: 0, backgroundColor: "#f24e1e" ,justifyContent:"center",alignItems: 'center',height:40,position:"relative"}]}>
+     
+     <TouchableOpacity
+        onPress={() =>navigation.navigate('DataVisualization',{text:text})}
+       style={styles.button1}>
+      
+       <Text style={styles.text}>Data Visualization</Text>
+     </TouchableOpacity>
+     </View>
+
     </>
 
   );
 }
 
-function History() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>History Screen </Text>
-    
-    <Button color="#f24e1e" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
-  </View>
+// function DataVisualization1() {
 
-  );
-}
+//   return (
+//     <ScrollView style={{ flex: 1,  }}>
+//     {text1 == 'B+'?  <View>
+    
+//     <View>
+//   <Text>Gender Graph of donors</Text>
+//   <BarChart
+//     data={{
+//       labels: ["Male", "Female"],
+//       datasets: [
+//         {
+//           data: [
+//             80,
+//             20,
+            
+//           ]
+//         }
+//       ]
+//     }}
+//     width={Dimensions.get("window").width} // from react-native
+//     height={220}
+//     yAxisLabel="%"
+//     yAxisSuffix=""
+//     yAxisInterval={1} // optional, defaults to 1
+//     chartConfig={{
+//       backgroundColor: "#e26a00",
+//       backgroundGradientFrom: "#321d01",
+//       backgroundGradientTo: "#ffa726",
+//       decimalPlaces: "", // optional, defaults to 2dp
+//       color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+//       labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+//       style: {
+//         borderRadius: 16
+//       },
+//       propsForDots: {
+//         r: "6",
+//         strokeWidth: "2",
+//         stroke: "#ffa726"
+//       }
+//     }}
+//     bezier
+//     style={{
+//       marginVertical: 8,
+//       borderRadius: 16
+//     }}
+//   />
+// </View>
+
+// <View>
+//   <Text>Health Graph of donors</Text>
+//   <BarChart
+//     data={{
+//       labels: ["Smoker", "Non smoker"],
+//       datasets: [
+//         {
+//           data: [
+//             30,
+//             60,
+            
+//           ]
+//         }
+//       ]
+//     }}
+//     width={Dimensions.get("window").width} // from react-native
+//     height={220}
+//     yAxisLabel="%"
+//     yAxisSuffix=""
+//     yAxisInterval={1} // optional, defaults to 1
+//     chartConfig={{
+//       backgroundColor: "#e26a00",
+//       backgroundGradientFrom: "#fb8c00",
+//       backgroundGradientTo: "#ffa726",
+//       decimalPlaces: "", // optional, defaults to 2dp
+//       color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+//       labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+//       style: {
+//         borderRadius: 16
+//       },
+//       propsForDots: {
+//         r: "6",
+//         strokeWidth: "2",
+//         stroke: "#ffa726"
+//       }
+//     }}
+//     bezier
+//     style={{
+//       marginVertical: 8,
+//       borderRadius: 16
+//     }}
+//   />
+// </View>
+
+
+// <View style={{paddingBottom:55}}>
+// <Text>Age Graph of donors</Text>
+// <PieChart
+//     data={[
+//   {
+//     name: "Age",
+//     population: 18,
+//     color: "rgba(131, 167, 234, 1)",
+//     legendFontColor: "#7F7F7F",
+//     legendFontSize: 15
+//   },
+//   {
+//     name: "Age",
+//     population: 25,
+//     color: "#F00",
+//     legendFontColor: "#7F7F7F",
+//     legendFontSize: 15
+//   },
+//   {
+//     name: "Age",
+//     population: 35,
+//     color: "#060505",
+//     legendFontColor: "#7f7c7c",
+//     legendFontSize: 15
+//   },
+//   {
+//     name: "Age",
+//     population: 40,
+//     color: "#ffffff",
+//     legendFontColor: "#7F7F7F",
+//     legendFontSize: 15
+//   },
+//   {
+//     name: "Age",
+//     population: 60,
+//     color: "rgb(0, 0, 255)",
+//     legendFontColor: "#7F7F7F",
+//     legendFontSize: 15
+//   }
+// ]}
+  
+//   width={400}
+//   height={220}
+//   chartConfig={{
+//       backgroundColor: "#e26a00",
+//       backgroundGradientFrom: "#fb8c00",
+//       backgroundGradientTo: "#ffa726",
+//       decimalPlaces: "", // optional, defaults to 2dp
+//       color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+//       labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,}}
+//   accessor={"population"}
+//   backgroundColor={"transparent"}
+//   paddingLeft={"15"}
+
+//   center={[5, 10]}
+//   absolute 
+//   />
+
+
+// </View>
+// </View>:null }
+//    </ScrollView>
+
+//   );
+// }
 
 function Report() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Report Screen</Text>
+    <View style={{ flex: 1,width: "100%",paddingTop:35,paddingLeft:35,justifyContent: 'flex-start', alignItems: 'flex-start', }}>
+      <Text style={{ fontSize: 17,}}>Name:</Text>
+      <Text style={{ fontSize: 17,}}>Email:</Text>
+      <Text  style={{ fontSize: 17,}}>Age:</Text>
+      <Text style={{ fontSize: 17,}}>Gender:</Text>
+      <Text style={{ fontSize: 17,}}>Bloodgroup:</Text>
+
       <Button color="#f24e1e" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
 
     </View>
@@ -293,11 +473,11 @@ function MyDrawer() {
           <AntDesign name="home" size={24} color="black" />
         )
       }}  />
-      <Drawer.Screen name="History" component={History} options={{
+      {/* <Drawer.Screen name="DataVisualization1" component={DataVisualization1} options={{
         DrawerIcon:({color})=>(
           <AntDesign name="home" size={24} color="black" />
         )
-      }}  />
+      }}  /> */}
       <Drawer.Screen name="Report" component={Report}
       
       options={{
@@ -339,10 +519,13 @@ button2:{flex:1,flexDirection:"column",width:"100%",alignContent:"center",alignI
 button2s:{ backgroundColor: '#f24e1e',borderRadius:5,width:"40%" ,justifyContent:"center",flexDirection:"row"},
 button2Text:{ fontSize: 17,marginLeft:1,marginTop:6,alignItems:"center",height:30,textAlign:"center", color: 'white' },
 TEXT: {
-  borderColor: "#f24e1e",
+  borderColor: "black",
   paddingLeft:2,
   width: "100%",
   borderWidth: 1,
   paddingBottom: 5,
+},
+button1:{
+  backgroundColor: '#f24e1e',borderRadius:5,width:"80%" ,justifyContent:"center",flexDirection:"row"
 },
 });

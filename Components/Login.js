@@ -26,7 +26,7 @@ export class Login extends Component {
     }
     else {
 
-      var apiURL = "http://192.168.2.45:80/api/login.php";
+      var apiURL = "http://192.168.0.104:80/api/login.php";
       var Data = {
         email: email,
         pass: pass,
@@ -111,7 +111,7 @@ export class Login extends Component {
               // onPress={this.loginhandler}
               onPress={() => this.props.navigation.navigate('Welcome to Bloodlytics')}
               style={styles.button}>
-              <View style={{ marginTop: 8 }}>
+              <View style={{ marginTop: 8,paddingRight:2 }}>
                 <AntDesign name="login" size={17} color="white" />
               </View>
               <Text style={styles.text}>Log in</Text>
