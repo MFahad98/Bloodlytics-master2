@@ -163,7 +163,14 @@ function Home({navigation}) {
             coordinate={{latitude:  31.430766,
             longitude: 73.1158531}}
             title={title1}
-            description={"description contect no 1311354"}> 
+            description={"description \n contect no 1311354 fagdjkadhada "}> 
+             <MapView.Callout>
+        <View style={{height: 100, width: 200}}>
+          <Text> Title </Text>
+          <Text> Long Description    Even More Text</Text>
+          <Text>Multline Description </Text>
+        </View>
+      </MapView.Callout>
             </MapView.Marker><MapView.Marker
             coordinate={{latitude:  31.430466,
             longitude: 73.1158531}}

@@ -28,7 +28,7 @@ function Data () {
   {route.params.text == 'B+'?  <View>
       
       <View>
-    <Text>Gender Graph of donors</Text>
+    <Text>Gender of donors</Text>
     <BarChart 
       data={{
         labels: ["Male", "Female"],
@@ -44,13 +44,13 @@ function Data () {
       }}
       width={Dimensions.get("window").width} // from react-native
       height={220}
-      yAxisLabel="%"
+      yAxisLabel=""
       yAxisSuffix=""
       yAxisInterval={1} // optional, defaults to 1
       chartConfig={{
-        backgroundColor: "#e26a00",
-        backgroundGradientFrom: "#321d01",
-        backgroundGradientTo: "#ffa726",
+        backgroundColor: "#ece7e2",
+        backgroundGradientFrom: "#000000",
+        backgroundGradientTo: "#070707",
         decimalPlaces: "", // optional, defaults to 2dp
         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
@@ -60,7 +60,7 @@ function Data () {
         propsForDots: {
           r: "6",
           strokeWidth: "2",
-          stroke: "#ffa726"
+          stroke: "#80170e"
         }
       }}
       bezier
@@ -68,11 +68,12 @@ function Data () {
         marginVertical: 8,
         borderRadius: 0,
       }}
+      fromZero
     />
   </View>
   
   <View>
-    <Text>Health Graph of donors</Text>
+    <Text>Smoker/Non-Smoker</Text>
     <BarChart
       data={{
         labels: ["Smoker", "Non smoker"],
@@ -88,13 +89,13 @@ function Data () {
       }}
       width={Dimensions.get("window").width} // from react-native
       height={220}
-      yAxisLabel="%"
+      yAxisLabel=""
       yAxisSuffix=""
       yAxisInterval={1} // optional, defaults to 1
       chartConfig={{
         backgroundColor: "#e26a00",
-        backgroundGradientFrom: "#fb8c00",
-        backgroundGradientTo: "#ffa726",
+        backgroundGradientFrom: "#e26a00",
+        backgroundGradientTo: "#e26a00",
         decimalPlaces: "", // optional, defaults to 2dp
         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
@@ -112,45 +113,46 @@ function Data () {
         marginVertical: 8,
         borderRadius: 0
       }}
+      fromZero
     />
   </View>
   
   
   <View style={{paddingBottom:55}}>
-  <Text>Age Graph of donors</Text>
+  <Text>Age</Text>
   <PieChart
       data={[
     {
-      name: "Age",
-      population: 18,
+      name: "Age 18",
+      population: 10,
       color: "rgba(131, 167, 234, 1)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15
     },
     {
-      name: "Age",
+      name: "Age 20",
       population: 25,
       color: "#F00",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15
     },
     {
-      name: "Age",
-      population: 35,
+      name: "Age 30",
+      population: 25,
       color: "#060505",
       legendFontColor: "#7f7c7c",
       legendFontSize: 15
     },
     {
-      name: "Age",
-      population: 40,
+      name: "Age 40",
+      population: 30,
       color: "#ffffff",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15
     },
     {
-      name: "Age",
-      population: 60,
+      name: "Age 50",
+      population: 20,
       color: "rgb(0, 0, 255)",
       legendFontColor: "#7F7F7F",
       legendFontSize: 15
@@ -170,8 +172,7 @@ function Data () {
     backgroundColor={"transparent"}
     paddingLeft={"15"}
   
-    center={[5, 10]}
-    absolute 
+    center={[5, 10]} 
     />
   
   

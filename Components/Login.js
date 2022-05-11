@@ -26,7 +26,7 @@ export class Login extends Component {
     }
     else {
 
-      var apiURL = "http://192.168.0.104:80/api/login.php";
+      var apiURL = "http://192.168.0.103:80/api/login.php";
       var Data = {
         email: email,
         pass: pass,
