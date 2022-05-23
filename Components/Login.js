@@ -26,7 +26,7 @@ export class Login extends Component {
     }
     else {
 
-      var apiURL = "http://192.168.0.103:80/api/login.php";
+      var apiURL = "http://192.168.0.104:80/api/login.php";
       var Data = {
         email: email,
         pass: pass,
@@ -90,7 +90,7 @@ export class Login extends Component {
             onChangeText = {pass => this.setState({pass})}
             />
 
-          <View style={[{ width: "90%", margin: 10, backgroundColor: "#f24e1e",alignItem:"center",justifyContent:"center", borderRadius: 5 }]}>
+          <View style={[{ width: "90%", margin: 10, backgroundColor: "#e23a33",alignItem:"center",justifyContent:"center", borderRadius: 5 }]}>
 
 
             <TouchableOpacity
@@ -119,6 +119,21 @@ export class Login extends Component {
 
 
           </View>
+          
+          <View style={{flexDirection:"row",width:"100%"}}>
+        <View style={{width:"32%",marginLeft:90}}>
+      <Text>Forget Password?</Text> 
+      </View>
+       <View style={[{ width: 70,borderRadius:50,height:32, backgroundColor: "white"  ,borderRadius:15}]}>
+      
+       <TouchableOpacity
+        onPress={() => this.props.navigation.navigate('Step1')}
+        style={{ backgroundColor: 'white',borderRadius:50,width:"100%" ,justifyContent:"center",flexDirection:"row"}}>
+          
+        <Text style={{color:"#e23a33",textDecorationLine:"underline",}}>Click here</Text>
+      </TouchableOpacity>
+      </View>
+      </View>
 
           <View style={{flexDirection:"row",width:"100%"}}>
         <View style={{width:"36%",marginLeft:90}}>
@@ -130,7 +145,7 @@ export class Login extends Component {
         onPress={() => this.props.navigation.navigate('Step1')}
         style={{ backgroundColor: 'white',borderRadius:50,width:"100%" ,justifyContent:"center",flexDirection:"row"}}>
           
-        <Text style={{color:"#f24e1e",textDecorationLine:"underline"}}>Sign up</Text>
+        <Text style={{color:"#e23a33",textDecorationLine:"underline"}}>Sign up</Text>
       </TouchableOpacity>
       </View>
       </View>
@@ -160,7 +175,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   header: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 29,
 
   },
@@ -190,22 +205,22 @@ const styles = StyleSheet.create({
     marginLeft: 18
   },
   TEXT: {
-    borderBottomColor: "#f24e1e", borderColor: "white", width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
+    borderBottomColor: "#e23a33", borderColor: "white", width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
   },
   Password: {
-    borderBottomColor: "#f24e1e", borderTopColor: "#f24e1e", borderColor: "white", height: 42, width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
+    borderBottomColor: "#e23a33", borderTopColor: "#e23a33", borderColor: "white", height: 42, width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
   },
   BUTTON: {
     width: "90%",
-    color: "#f24e1e"
+    color: "#e23a33"
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 95,
+    height: 95,
     alignSelf: "flex-start",
     justifyContent: 'center',
     backgroundColor: "white",
@@ -240,7 +255,7 @@ const styles = StyleSheet.create({
 
   },
   Mscreen: { flex: 1, width: '100%', alignItems: 'center', justifyContent: 'flex-start', backgroundColor: "white" },
-  button: { backgroundColor: '#f24e1e', borderRadius: 50, width: "100%", justifyContent: "center", flexDirection: "row" },
+  button: { backgroundColor: '#e23a33', borderRadius: 50, width: "100%", justifyContent: "center", flexDirection: "row" },
   text: { fontSize: 20, marginLeft: 1, marginTop: 2, textAlign: "center", height: 33, color: 'white' }
 
 

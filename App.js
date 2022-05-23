@@ -66,7 +66,7 @@ function HomeScreen({ navigation }) {
     <Image style={styles.logo} source = {require('./assets/logo.png')} />
     </View>
     <Text>Welcome to Bloodlytics</Text>
-       <View style={[{ width: "90%", margin: 10, backgroundColor: "#f24e1e" ,height:35,borderRadius: 5,alignItems: 'center',justifyContent:"center",overflow:"hidden",}]}>
+       <View style={[{ width: "90%", margin: 10, backgroundColor: "#e23a33" ,height:35,borderRadius: 5,alignItems: 'center',justifyContent:"center",overflow:"hidden",}]}>
      
       <TouchableOpacity
         onPress={() => navigation.navigate('Login')}
@@ -78,7 +78,7 @@ function HomeScreen({ navigation }) {
       </TouchableOpacity>
       </View>
      
-      <View style={[{ width: "90%",borderRadius:5,height:35,alignItems: 'center',justifyContent:"center", backgroundColor: "#f24e1e"  }]}>
+      <View style={[{ width: "90%",borderRadius:5,height:35,alignItems: 'center',justifyContent:"center", backgroundColor: "#e23a33"  }]}>
        <TouchableOpacity
         onPress={() => navigation.navigate('Step1')}
         style={styles.icon}>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     fontFamily:'Roboto_100Thin'
     },
   header:{
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize:29,
     paddingTop:100
   },
@@ -166,22 +166,22 @@ const styles = StyleSheet.create({
     marginLeft:18
   },
   TEXT:{
-    borderBottomColor:"#f24e1e",borderColor:"white",width: "90%",borderWidth:1,paddingBottom:5,marginBottom:10
+    borderBottomColor:"#e23a33",borderColor:"white",width: "90%",borderWidth:1,paddingBottom:5,marginBottom:10
   },
   Password:{
-    borderBottomColor:"#f24e1e",borderTopColor:"#f24e1e",borderColor:"white",height:42,width: "90%",borderWidth:1,paddingBottom:5,marginBottom:10
+    borderBottomColor:"#e23a33",borderTopColor:"#e23a33",borderColor:"white",height:42,width: "90%",borderWidth:1,paddingBottom:5,marginBottom:10
   },
   BUTTON:{
     width: "90%",
-    color: "#f24e1e"
+    color: "#e23a33"
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     alignSelf: "center",
  
   
@@ -191,12 +191,12 @@ const styles = StyleSheet.create({
     flex: 1, alignItems: 'center',justifyContent:"center", backgroundColor:"white" 
   },
   button1:{
-    backgroundColor: '#f24e1e',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"
+    backgroundColor: '#e23a33',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"
   },
 
   text:{ fontSize: 20,marginLeft:1,textAlign:"center", color: 'white' },
 
   text2:{ fontSize: 20,marginLeft:2,textAlign:"center", color: 'white' },
-  icon:{ backgroundColor: '#f24e1e',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"},
+  icon:{ backgroundColor: '#e23a33',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"},
 
 });

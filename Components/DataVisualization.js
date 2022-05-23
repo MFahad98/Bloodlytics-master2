@@ -93,9 +93,9 @@ function Data () {
       yAxisSuffix=""
       yAxisInterval={1} // optional, defaults to 1
       chartConfig={{
-        backgroundColor: "#e26a00",
-        backgroundGradientFrom: "#e26a00",
-        backgroundGradientTo: "#e26a00",
+        backgroundColor: "#e23a33",
+        backgroundGradientFrom: "#e23a33",
+        backgroundGradientTo: "#e23a33",
         decimalPlaces: "", // optional, defaults to 2dp
         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   header: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 29,
 
   },
@@ -223,14 +223,14 @@ const styles = StyleSheet.create({
     marginLeft: 18
   },
   TEXT: {
-    borderBottomColor: "#f24e1e", borderColor: "white", width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
+    borderBottomColor: "#e23a33", borderColor: "white", width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
   },
   Password: {
-    borderBottomColor: "#f24e1e", borderTopColor: "#f24e1e", borderColor: "white", height: 42, width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
+    borderBottomColor: "#e23a33", borderTopColor: "#e23a33", borderColor: "white", height: 42, width: "90%", borderWidth: 1, paddingBottom: 5, marginBottom: 10
   },
   BUTTON: {
     width: "90%",
-    color: "#f24e1e"
+    color: "#e23a33"
   },
   tinyLogo: {
     width: 50,
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
 
   },
   Mscreen: { flex: 1, width: '100%', alignItems: 'center', justifyContent: 'flex-start', backgroundColor: "white" },
-  button: { backgroundColor: '#f24e1e', borderRadius: 50, width: "100%", justifyContent: "center", flexDirection: "row" },
+  button: { backgroundColor: '#e23a33', borderRadius: 50, width: "100%", justifyContent: "center", flexDirection: "row" },
   text: { fontSize: 20, marginLeft: 1, marginTop: 2, textAlign: "center", height: 33, color: 'white' }
 
 

@@ -200,7 +200,7 @@ export class Signup extends Component {
         if (!passcheck.test(pass)) {
           alert('Enter Password requirements!');
         }
-        var apiURL = "http://192.168.18.14:80/api/insert.php";
+        var apiURL = "http://192.168.0.104:80/api/insert.php";
         // var headers = {
         //   'Accept' : 'application/json',
         //   'Content-Type' : 'application/json'
@@ -320,17 +320,17 @@ export class Signup extends Component {
 
           <TextInput
             style={styles.TEXT}
-            keyboardType="numeric"
+            keyboardType="name-phone-pad"
             textContentType="password"
-            placeholder="Street no"
-            onChangeText={stnum => this.setState({ stnum })}
-          // value={StreetNo}
-          // onChangeText={(value) => onChangehandler(value, "StreetNo")}
+            placeholder="Select Colony"
+            onChangeText={hnum => this.setState({ hnum })}
+          // value={HouseNO}
+          // onChangeText={(value) => onChangehandler(value, "HouseNO")}
           />
 
           <TextInput
             style={styles.TEXT}
-            keyboardType="numeric"
+            keyboardType="name-phone-pad"
             textContentType="password"
             placeholder="House no"
             onChangeText={hnum => this.setState({ hnum })}
@@ -338,6 +338,18 @@ export class Signup extends Component {
           // onChangeText={(value) => onChangehandler(value, "HouseNO")}
           />
 
+          <TextInput
+            style={styles.TEXT}
+            keyboardType="name-phone-pad"
+            textContentType="password"
+            placeholder="Street no"
+            onChangeText={stnum => this.setState({ stnum })}
+          // value={StreetNo}
+          // onChangeText={(value) => onChangehandler(value, "StreetNo")}
+          />
+
+         
+{/* 
           <View
             style={{
               flexDirection: "row",
@@ -365,7 +377,7 @@ export class Signup extends Component {
               <Picker.Item label="Farooqabad" value="Farooqabad" />
               <Picker.Item label="Kohainoor" value="Kohainoor" />
             </Picker>
-          </View>
+          </View> */}
 
 {/*         <View
             style={{
@@ -457,9 +469,9 @@ export class Signup extends Component {
               {
                 width: "20%",
                 margin: 10,
-                marginTop:-63,
+                marginTop:-83,
                 marginLeft:260,   
-                backgroundColor: "#f24e1e",
+                backgroundColor: "#e23a33",
                 borderRadius: 5,
                
               },
@@ -491,7 +503,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 29,
   },
   p: {
@@ -514,14 +526,14 @@ const styles = StyleSheet.create({
     paddingTop: 12,
   },
   TEXT: {
-    borderBottomColor: "#f24e1e",
+    borderBottomColor: "#e23a33",
     borderColor: "white",
     width: "90%",
     borderWidth: 1,
     paddingBottom: 5,
   },
   Password: {
-    borderBottomColor: "#f24e1e",
+    borderBottomColor: "#e23a33",
     borderColor: "white",
     height: 40,
     width: "90%",
@@ -529,20 +541,20 @@ const styles = StyleSheet.create({
   },
   BUTTON: {
     width: "90%",
-    color: "#f24e1e",
+    color: "#e23a33",
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 95,
+    height: 95,
     alignSelf: "flex-start",
     justifyContent: "center",
     backgroundColor: "white",
 
-    marginLeft: "37%",
+    marginLeft: 5,
     marginTop: 5,
   },
   logo2: {
@@ -556,10 +568,10 @@ const styles = StyleSheet.create({
   },
   pic: {
     width: "90%",
-    height: 190,
+    height: 215,
     opacity: 1,
     
-    marginTop:235,
+    marginTop:255,
     backgroundColor: "white",
     alignItems: "flex-start",
   },
@@ -570,13 +582,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   errors: {
-    backgroundColor: "#f24e1e",
+    backgroundColor: "#e23a33",
     color: "white",
     width: "100%",
     textAlign: "center",
   },
   button1: {
-    backgroundColor: "#f24e1e",
+    backgroundColor: "#e23a33",
     borderRadius: 5,
     width: "100%",
     justifyContent: "center",
@@ -594,7 +606,7 @@ const styles = StyleSheet.create({
   msg1: {
     height:16 ,
     width:160 ,
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 12,
     marginBottom: 10,
     marginRight: 165,
@@ -603,7 +615,7 @@ const styles = StyleSheet.create({
   msg: {
     height:28 ,
     width:"90%" ,
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 12,
     marginBottom: 10,
   },

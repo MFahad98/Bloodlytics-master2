@@ -128,11 +128,12 @@ function Home({navigation}) {
       
       </ImageBackground> */}
       {/* <Text>Welcome to Bloodlytics</Text> */}
-      <TextInput
+      <TextInput maxLength={3}
         style={styles.TEXT}
             keyboardType="name-phone-pad"
             textContentType="username"
             placeholder="Find Your BloodGroup"
+          
             onChangeText={newText => setText(newText)} 
             >
               
@@ -153,48 +154,68 @@ function Home({navigation}) {
       
       {/* different approch for marker */}
 
-      {Around.map((item,index)=>
+      {/* {Around.map((item,index)=>
       <MapView.Marker coordinate={item} key={index} title={"Blood"}
-            description={"description"} ></MapView.Marker>)}
+            description={"description"} ></MapView.Marker>)} */}
    
-      {/* another */}
+      {/* another Marker start */ }
       {text == 'B+'?  <View>
       <MapView.Marker
             coordinate={{latitude:  31.430766,
             longitude: 73.1158531}}
-            title={title1}
-            description={"description \n contect no 1311354 fagdjkadhada "}> 
-             <MapView.Callout>
-        <View style={{height: 100, width: 200}}>
-          <Text> Title </Text>
-          <Text> Long Description    Even More Text</Text>
-          <Text>Multline Description </Text>
-        </View>
-      </MapView.Callout>
-            </MapView.Marker><MapView.Marker
+          > 
+          <MapView.Callout>
+           <View style={{height: 100, width: 200}}>
+           <Text> Title </Text>
+           <Text> Long Description {'\n'}  Even More Text</Text>
+           <Text>Multline Description </Text>
+           </View>
+            </MapView.Callout>
+            </MapView.Marker>
+            {/* Marker END */ }
+
+            <MapView.Marker
+            coordinate={{latitude:  31.430766,
+            longitude: 73.1158531}}
+          > 
+          <MapView.Callout>
+           <View style={{height: 100, width: 200}}>
+           <Text> Title </Text>
+           <Text> Long Description {'\n'}  Even More Text</Text>
+           <Text>Multline Description </Text>
+           </View>
+            </MapView.Callout>
+            </MapView.Marker>
+            {/* Marker END */ }
+
+            
+            <MapView.Marker
             coordinate={{latitude:  31.430466,
             longitude: 73.1158531}}
             title={title1}
-            description={"description"}></MapView.Marker></View>
-            : text=="A"?<MapView.Marker
+            description={"description  "}>
+            </MapView.Marker>
+            </View>
+             
+            : text=="A+"?<MapView.Marker
             coordinate={{latitude:  31.430166,
             longitude: 73.1158131}}
             title={title1}
             description={"description"}
          />:null }
       
-          <MapView.Marker
+          {/* <MapView.Marker
             coordinate={{latitude:  31.430741,
             longitude: 73.1179950}}
             title={"title"}
             description={"description"}
-         />
+         /> */}
       </MapView> 
       
       
 
       </View>
-      <View style={[{ width: "100%", margintop: 0, backgroundColor: "#f24e1e" ,justifyContent:"center",alignItems: 'center',height:40,position:"relative"}]}>
+      <View style={[{ width: "100%", margintop: 0, backgroundColor: "#e23a33" ,justifyContent:"center",alignItems: 'center',height:40,position:"relative"}]}>
      
      <TouchableOpacity
         onPress={() =>navigation.navigate('DataVisualization',{text:text})}
@@ -379,7 +400,7 @@ function Report() {
       <Text style={{ fontSize: 17,}}>Gender:</Text>
       <Text style={{ fontSize: 17,}}>Bloodgroup:</Text>
 
-      <Button color="#f24e1e" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
+      <Button color="#e23a33" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
 
     </View>
   );
@@ -420,7 +441,7 @@ function Help() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Contact Us</Text>
-      <Button color="#f24e1e" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
+      <Button color="#e23a33" title="Click"  onPress={() => Alert.alert('Thank you 😉')}/>
 
     </View>
   );
@@ -442,7 +463,7 @@ function CustomDrawerContent(props,navigation) {
       </View>
     </DrawerContentScrollView>
 
-    <View style={{padding:15,borderWidth:1,borderTopColor:"#f24e1e",borderColor:"white"}}>
+    <View style={{padding:15,borderWidth:1,borderTopColor:"#e23a33",borderColor:"white"}}>
       <TouchableOpacity onPress={()=>props.navigation.reset({
         index: 0,
 
@@ -452,7 +473,7 @@ function CustomDrawerContent(props,navigation) {
             params: { someParam: 'Param1' },
           },
         ],
-      })}  style={{alignItems:"center",justifyContent:"space-around",flexDirection:"row",paddingVertical:10,backgroundColor:"#f24e1e",borderRadius:5,width:"100%" }}>
+      })}  style={{alignItems:"center",justifyContent:"space-around",flexDirection:"row",paddingVertical:10,backgroundColor:"#e23a33",borderRadius:5,width:"100%" }}>
       
       <AntDesign name="logout" size={18} color="white" />
       <Text style={{color:"white"}}>Log out</Text>
@@ -472,7 +493,7 @@ function MyDrawer() {
   return (
      
     <Drawer.Navigator  drawerContent={(props) => <CustomDrawerContent {...props} />}
-    screenOptions={{drawerActiveBackgroundColor:"#f24e1e",drawerActiveTintColor:"white"}}
+    screenOptions={{drawerActiveBackgroundColor:"#e23a33",drawerActiveTintColor:"white"}}
     >
     
       <Drawer.Screen name="Home" component={Home} options={{
@@ -520,10 +541,10 @@ const styles = StyleSheet.create({
   },
 Mscreen:{flexDirection:"row",width:"100%",alignContent:"space-between",alignItems:"center",justifyContent:"space-around" },
 input:{backgroundColor:"white",marginLeft:7,height:35,width:"70%",borderRadius:5,borderColor:"black",padding:2,borderWidth:1,marginTop:10,},
-buttonSearch:{ backgroundColor: '#f24e1e',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"},
+buttonSearch:{ backgroundColor: '#e23a33',borderRadius:5,width:"100%" ,justifyContent:"center",flexDirection:"row"},
 text:{ fontSize: 17,marginLeft:1,marginTop:5,alignItems:"center",height:29,textAlign:"center", color: 'white' },
 button2:{flex:1,flexDirection:"column",width:"100%",alignContent:"center",alignItems:"center",justifyContent:"flex-end",marginBottom:20 },
-button2s:{ backgroundColor: '#f24e1e',borderRadius:5,width:"40%" ,justifyContent:"center",flexDirection:"row"},
+button2s:{ backgroundColor: '#e23a33',borderRadius:5,width:"40%" ,justifyContent:"center",flexDirection:"row"},
 button2Text:{ fontSize: 17,marginLeft:1,marginTop:6,alignItems:"center",height:30,textAlign:"center", color: 'white' },
 TEXT: {
   borderColor: "black",
@@ -533,6 +554,6 @@ TEXT: {
   paddingBottom: 5,
 },
 button1:{
-  backgroundColor: '#f24e1e',borderRadius:5,width:"80%" ,justifyContent:"center",flexDirection:"row"
+  backgroundColor: '#e23a33',borderRadius:5,width:"80%" ,justifyContent:"center",flexDirection:"row"
 },
 });

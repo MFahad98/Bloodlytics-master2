@@ -217,7 +217,7 @@ export class Signup extends Component {
         if (!passcheck.test(pass)) {
           alert('Enter Password requirements!');
         }
-        var apiURL = "http://192.168.0.103:80/api/insert.php";
+        var apiURL = "http://192.168.0.104:80/api/insert.php";
         // var headers = {
         //   'Accept' : 'application/json',
         //   'Content-Type' : 'application/json'
@@ -476,7 +476,7 @@ export class Signup extends Component {
                 margin: 10,
                 marginTop:-63,
                 marginLeft:260,   
-                backgroundColor:"#f24e1e",
+                backgroundColor:"#e23a33",
                 borderRadius: 5,
                
               },
@@ -508,7 +508,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 29,
   },
   p: {
@@ -531,14 +531,14 @@ const styles = StyleSheet.create({
     paddingTop: 12,
   },
   TEXT: {
-    borderBottomColor: "#f24e1e",
+    borderBottomColor: "#e23a33",
     borderColor: "white",
     width: "90%",
     borderWidth: 1,
     paddingBottom: 5,
   },
   Password: {
-    borderBottomColor: "#f24e1e",
+    borderBottomColor: "#e23a33",
     borderColor: "white",
     height: 40,
     width: "90%",
@@ -546,20 +546,20 @@ const styles = StyleSheet.create({
   },
   BUTTON: {
     width: "90%",
-    color: "#f24e1e",
+    color: "#e23a33",
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 95,
+    height: 95,
     alignSelf: "flex-start",
     justifyContent: "center",
     backgroundColor: "white",
 
-    marginLeft: "37%",
+    marginLeft: 5,
     marginTop: 5,
   },
   logo2: {
@@ -587,13 +587,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   errors: {
-    backgroundColor: "#f24e1e",
+    backgroundColor: "#e23a33",
     color: "white",
     width: "100%",
     textAlign: "center",
   },
   button1: {
-    backgroundColor: "#f24e1e",
+    backgroundColor: "#e23a33",
     borderRadius: 5,
     width: "100%",
     justifyContent: "center",
@@ -609,14 +609,17 @@ const styles = StyleSheet.create({
     color: "white",
   },
   msg1: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 12,
     marginBottom: 10,
-    marginRight: 165,
+    marginRight: 156,
+    marginLeft:12
   },
   msg: {
-    color: "#f24e1e",
+    color: "#e23a33",
     fontSize: 12,
     marginBottom: 10,
+    marginLeft:11,
+    marginRight: 25,
   },
 });
