@@ -323,7 +323,7 @@ export class Signup extends Component {
             keyboardType="name-phone-pad"
             textContentType="password"
             placeholder="Select Colony"
-            onChangeText={hnum => this.setState({ hnum })}
+            onChangeText={""}
           // value={HouseNO}
           // onChangeText={(value) => onChangehandler(value, "HouseNO")}
           />
