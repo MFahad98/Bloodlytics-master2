@@ -410,21 +410,7 @@ function Donor() {
   return (
       <>
       <View style={styles.Mscreen}>
-       <TextInput keyboardType="number-pad"  style={styles.input} placeholder="Your Phone Number"  />
-
-      <View style={{marginTop:10,width:"20%",height:35,}}>
-      
-      <TouchableOpacity
-      onPress={() => Alert.alert('Thank You 😄')}
-      
-        style={styles.buttonSearch}>
-  
-        <Text style={styles.text}>Submit</Text>
-      </TouchableOpacity>
-       </View> 
-      </View>
-      <View style={styles.button2} >
-      
+       <Text>Contect us:0311xxxxx</Text>
 
       
 
