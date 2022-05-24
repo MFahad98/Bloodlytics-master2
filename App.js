@@ -11,6 +11,8 @@ import Step1 from './Components/Step1.js';
 import Step2 from './Components/Step2.js';
 import Step3 from './Components/Step3.js';
 import DataVisualization from './Components/DataVisualization';
+import Email from './Components/Email';
+import Password from './Components/Password';
 
 import MyDrawer from './Components/Nexthome.js';
 
@@ -112,8 +114,9 @@ function App() {
         <Stack.Screen name="Step1" component={Step1} />
         <Stack.Screen name="Step2" component={Step2} />
         <Stack.Screen name="Step3" component={Step3} />
-
         <Stack.Screen name="DataVisualization" component={DataVisualization} />
+        <Stack.Screen name="Email" component={Email} />
+        <Stack.Screen name="Password" component={Password} />
         
         <Stack.Screen name="Welcome to Bloodlytics" component={MyDrawer} />
       </Stack.Navigator>

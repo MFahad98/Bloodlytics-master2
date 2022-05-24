@@ -127,7 +127,7 @@ export class Login extends Component {
        <View style={[{ width: 70,borderRadius:50,height:32, backgroundColor: "white"  ,borderRadius:15}]}>
       
        <TouchableOpacity
-        onPress={() => this.props.navigation.navigate('Step1')}
+        onPress={() => this.props.navigation.navigate('Email')}
         style={{ backgroundColor: 'white',borderRadius:50,width:"100%" ,justifyContent:"center",flexDirection:"row"}}>
           
         <Text style={{color:"#e23a33",textDecorationLine:"underline",}}>Click here</Text>
